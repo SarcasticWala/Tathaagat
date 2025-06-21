@@ -41,7 +41,7 @@ const GetInvolved = () => {
 
   const handleJoinWhatsApp = () => {
     // Open WhatsApp group link
-    window.open("https://chat.whatsapp.com/your-group-link", "_blank");
+    window.open("https://chat.whatsapp.com/DPCXOGMdQ4uIm2NgDv9JJT", "_blank");
     setShowThankYou(false);
   };
 
