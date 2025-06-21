@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,6 +18,7 @@ const GetInvolved = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const { toast } = useToast();
+  const relatabilityRef = useRef<HTMLDivElement>(null);
 
   const isLowEngagement = rating !== null && rating <= 5;
   const emojis = ['😠', '😞', '😕', '😐', '😶', '🙃', '🙂', '😊', '😄', '🤝'];
@@ -41,7 +41,7 @@ const GetInvolved = () => {
 
   const handleJoinWhatsApp = () => {
     // Open WhatsApp group link
-    window.open("https://chat.whatsapp.com/DPCXOGMdQ4uIm2NgDv9JJT");
+    window.open("https://chat.whatsapp.com/your-group-link", "_blank");
     setShowThankYou(false);
   };
 
@@ -62,7 +62,7 @@ const GetInvolved = () => {
                 Join our team of dedicated volunteers working on ground-level interventions 
                 across rural communities.
               </p>
-              <Button className="bg-green-600 hover:bg-green-700" onClick={() => toast({ title: "Volunteer interest noted!" })}>
+              <Button className="bg-green-600 hover:bg-green-700" onClick={() => relatabilityRef.current?.scrollIntoView({ behavior: 'smooth' })}>
                 Become a Volunteer
               </Button>
             </div>
@@ -74,7 +74,7 @@ const GetInvolved = () => {
                 Collaborate with us as an organization or institution to scale our impact 
                 and create sustainable solutions.
               </p>
-              <Button className="bg-green-600 hover:bg-green-700" onClick={() => toast({ title: "Partnership interest noted!" })}>
+              <Button className="bg-green-600 hover:bg-green-700" onClick={() => relatabilityRef.current?.scrollIntoView({ behavior: 'smooth' })}>
                 Partner With Us
               </Button>
             </div>
@@ -86,7 +86,7 @@ const GetInvolved = () => {
                 Support our mission financially to help us expand our reach and 
                 create more sustainable village ecosystems.
               </p>
-              <Button className="bg-green-600 hover:bg-green-700" onClick={() => toast({ title: "Thank you for your donation interest!" })}>
+              <Button className="bg-green-600 hover:bg-green-700" onClick={() => window.location.href = '/contact'}>
                 Make a Donation
               </Button>
             </div>
@@ -110,7 +110,7 @@ const GetInvolved = () => {
         </section>
 
         {/* Interactive Rating Form */}
-        <section>
+        <section ref={relatabilityRef}>
           <Card className="max-w-4xl mx-auto">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl font-bold text-green-800 mb-4">

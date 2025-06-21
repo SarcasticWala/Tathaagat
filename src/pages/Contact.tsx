@@ -1,4 +1,3 @@
-
 const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-green-50">
@@ -107,13 +106,13 @@ const Contact = () => {
               we'd love to hear from you. Together, we can create sustainable change, one village at a time.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors" onClick={() => window.location.href = '/get-involved'}>
                 Volunteer Today
               </button>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors" onClick={() => window.location.href = '/get-involved'}>
                 Become a Partner
               </button>
-              <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+              <button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 Make a Donation
               </button>
             </div>

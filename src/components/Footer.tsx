@@ -1,5 +1,10 @@
 
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+    const navigate = useNavigate();
+      const goToGetInvolved = () => {
+    navigate("/get-involved");
+  };
   return (
     <footer className="bg-green-900 text-white py-12">
       <div className="container mx-auto px-6">
@@ -23,22 +28,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-green-300">Take Action</h4>
             <div className="space-y-2">
               <div className="flex flex-col sm:flex-row gap-2">
-                <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition-colors">
+                <button onClick={goToGetInvolved} className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition-colors">
                   Volunteer
                 </button>
-                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition-colors">
+                {/* <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition-colors">
                   Partner
                 </button>
                 <button className="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded transition-colors">
                   Donate
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200">
-          <p>&copy; 2024 Tathaagat Foundation. Together for a sustainable future.</p>
+          <p>&copy; 2025 Tathaagat Foundation. Together for a sustainable future.</p>
         </div>
       </div>
     </footer>
