@@ -59,32 +59,31 @@ const GetInvolved = () => {
               <div className="text-4xl mb-4">🤝</div>
               <h3 className="text-xl font-bold text-green-800 mb-4">Volunteer</h3>
               <p className="text-gray-700 mb-6">
-                Join our team of dedicated volunteers working on ground-level interventions 
+                Join our team of dedicated volunteers working on ground-level interventions
                 across rural communities.
               </p>
               <Button className="bg-green-600 hover:bg-green-700" onClick={() => relatabilityRef.current?.scrollIntoView({ behavior: 'smooth' })}>
                 Become a Volunteer
               </Button>
             </div>
-            
+
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">🤝</div>
               <h3 className="text-xl font-bold text-green-800 mb-4">Partner</h3>
               <p className="text-gray-700 mb-6">
-                Collaborate with us as an organization or institution to scale our impact 
-                and create sustainable solutions.
+                Collaborate with us as an organization or institution to scale our impact
+                to create sustainable solutions.
               </p>
               <Button className="bg-green-600 hover:bg-green-700" onClick={() => relatabilityRef.current?.scrollIntoView({ behavior: 'smooth' })}>
                 Partner With Us
               </Button>
             </div>
-            
+
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">💝</div>
               <h3 className="text-xl font-bold text-green-800 mb-4">Donate</h3>
               <p className="text-gray-700 mb-6">
-                Support our mission financially to help us expand our reach and 
-                create more sustainable village ecosystems.
+          Support our mission proactively by contributing financially to expand our reach and benefit more sustainable village ecosystems.
               </p>
               <Button className="bg-green-600 hover:bg-green-700" onClick={() => window.location.href = '/contact'}>
                 Make a Donation
@@ -100,7 +99,7 @@ const GetInvolved = () => {
               Join the CBCC Movement
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              Be part of the "Change Before Climate Change" initiative and help us create 
+              Be part of the "Change Before Climate Change" initiative and help us create
               a nationwide movement for environmental action.
             </p>
             <Button className="bg-green-600 hover:bg-green-700 text-white" onClick={() => window.location.href = '/cbcc'}>
@@ -120,7 +119,7 @@ const GetInvolved = () => {
                 On a scale of 1 to 10, how strongly do you feel connected with our mission?
               </p>
             </CardHeader>
-            
+
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Emoji Rating Buttons */}
@@ -134,16 +133,15 @@ const GetInvolved = () => {
                     {emojis.map((emoji, index) => {
                       const ratingValue = index + 1;
                       const isSelected = rating === ratingValue;
-                      
+
                       return (
                         <button
                           key={ratingValue}
                           type="button"
-                          className={`text-4xl md:text-5xl p-3 rounded-xl transition-all transform hover:scale-110 ${
-                            isSelected 
-                              ? 'bg-green-500 shadow-xl scale-110' 
+                          className={`text-4xl md:text-5xl p-3 rounded-xl transition-all transform hover:scale-110 ${isSelected
+                              ? 'bg-green-500 shadow-xl scale-110'
                               : 'hover:bg-green-100'
-                          }`}
+                            }`}
                           onClick={() => setRating(ratingValue)}
                         >
                           <div className="text-center">
@@ -160,14 +158,12 @@ const GetInvolved = () => {
 
                 {/* Form Fields with Conditional Styling */}
                 {rating && (
-                  <div className={`space-y-6 p-6 rounded-lg ${
-                    isLowEngagement ? 'bg-red-50 border-2 border-red-200' : 'bg-green-50 border-2 border-green-200'
-                  }`}>
+                  <div className={`space-y-6 p-6 rounded-lg ${isLowEngagement ? 'bg-red-50 border-2 border-red-200' : 'bg-green-50 border-2 border-green-200'
+                    }`}>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                          isLowEngagement ? 'text-red-700' : 'text-green-700'
-                        }`}>
+                        <label className={`block text-sm font-medium mb-2 ${isLowEngagement ? 'text-red-700' : 'text-green-700'
+                          }`}>
                           Your Name *
                         </label>
                         <Input
@@ -181,9 +177,8 @@ const GetInvolved = () => {
                       </div>
 
                       <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                          isLowEngagement ? 'text-red-700' : 'text-green-700'
-                        }`}>
+                        <label className={`block text-sm font-medium mb-2 ${isLowEngagement ? 'text-red-700' : 'text-green-700'
+                          }`}>
                           Location *
                         </label>
                         <Input
@@ -199,9 +194,8 @@ const GetInvolved = () => {
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                          isLowEngagement ? 'text-red-700' : 'text-green-700'
-                        }`}>
+                        <label className={`block text-sm font-medium mb-2 ${isLowEngagement ? 'text-red-700' : 'text-green-700'
+                          }`}>
                           Phone Number *
                         </label>
                         <Input
@@ -215,9 +209,8 @@ const GetInvolved = () => {
                       </div>
 
                       <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                          isLowEngagement ? 'text-red-700' : 'text-green-700'
-                        }`}>
+                        <label className={`block text-sm font-medium mb-2 ${isLowEngagement ? 'text-red-700' : 'text-green-700'
+                          }`}>
                           Email ID *
                         </label>
                         <Input
@@ -232,10 +225,9 @@ const GetInvolved = () => {
                     </div>
 
                     <div>
-                      <label className={`block text-sm font-medium mb-2 ${
-                        isLowEngagement ? 'text-red-700' : 'text-green-700'
-                      }`}>
-                        {isLowEngagement 
+                      <label className={`block text-sm font-medium mb-2 ${isLowEngagement ? 'text-red-700' : 'text-green-700'
+                        }`}>
+                        {isLowEngagement
                           ? "Can you share why you feel disconnected or less engaged with our mission?"
                           : "Can you share why you feel connected with our mission?"
                         }
@@ -244,20 +236,18 @@ const GetInvolved = () => {
                         value={formData.message}
                         onChange={(e) => handleInputChange("message", e.target.value)}
                         placeholder="Share your thoughts..."
-                        className={`min-h-[120px] ${
-                          isLowEngagement ? 'border-red-300 focus:border-red-500' : 'border-green-300 focus:border-green-500'
-                        }`}
+                        className={`min-h-[120px] ${isLowEngagement ? 'border-red-300 focus:border-red-500' : 'border-green-300 focus:border-green-500'
+                          }`}
                         required
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      className={`w-full py-3 text-lg ${
-                        isLowEngagement 
-                          ? 'bg-red-600 hover:bg-red-700' 
+                    <Button
+                      type="submit"
+                      className={`w-full py-3 text-lg ${isLowEngagement
+                          ? 'bg-red-600 hover:bg-red-700'
                           : 'bg-green-600 hover:bg-green-700'
-                      } text-white`}
+                        } text-white`}
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Submitting..." : "Submit Response"}
@@ -282,14 +272,14 @@ const GetInvolved = () => {
                 Your response has been recorded. Together, we can make a real difference!
               </p>
               <div className="space-y-3">
-                <Button 
+                <Button
                   onClick={handleJoinWhatsApp}
                   className="w-full bg-green-600 hover:bg-green-700 text-white"
                 >
                   Join Our WhatsApp Group 📱
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   onClick={() => setShowThankYou(false)}
                   className="w-full"
                 >

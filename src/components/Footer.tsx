@@ -25,12 +25,12 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-green-300">Take Action</h4>
+            {/* <h4 className="text-lg font-semibold mb-4 text-green-300">Take Action</h4> */}
             <div className="space-y-2">
               <div className="flex flex-col sm:flex-row gap-2">
-                <button onClick={goToGetInvolved} className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition-colors">
+                {/* <button onClick={goToGetInvolved} className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transition-colors">
                   Volunteer
-                </button>
+                </button> */}
                 {/* <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded transition-colors">
                   Partner
                 </button>
