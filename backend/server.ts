@@ -9,6 +9,38 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+//mongoose schema for contact form
+
+interface IContactForm {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+const contactSchema = new mongoose.Schema<IContactForm>({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  subject: { type: String, required: true },
+  message: { type: String, required: true }
+});
+
+const Contact = mongoose.model<IContactForm>("Contact", contactSchema); // ✅ New model
+
+
+app.post("/api/contact", async (req, res) => {
+  try {
+    const { name, email, subject, message } = req.body;
+
+    const contactEntry = new Contact({ name, email, subject, message }); // ✅ Use Contact model
+    await contactEntry.save();
+
+    res.status(201).json({ message: "Form submitted successfully" });
+  } catch (error) {
+    console.error("Error saving contact form:", error);
+    res.status(500).json({ error: "Failed to save contact form data" });
+  }
+});
+
 // Mongoose schema and model
 interface IForm {
   name: string;
@@ -28,7 +60,8 @@ const formSchema = new mongoose.Schema<IForm>({
   message: { type: String, required: true }
 });
 
-const Form = mongoose.model<IForm & mongoose.Document>("Form", formSchema);
+const Form = mongoose.model<IForm>("Form", formSchema);
+
 
 // ✅ Avoid strict typing here!
 app.post("/api/saveForm", async (req, res) => {
