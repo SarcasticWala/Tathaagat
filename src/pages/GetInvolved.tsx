@@ -30,14 +30,39 @@ const GetInvolved = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    console.log("Get Involved submission:", { rating, ...formData });
-    setIsSubmitting(false);
-    setShowThankYou(true);
+    try {
+      const formPayload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+        rating,
+        message: formData.message,
+      };
+  
+      console.log("Sending:", formPayload);
+  
+      const response = await fetch('http://localhost:5000/api/saveForm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formPayload),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        setShowThankYou(true);
+        toast({ title: 'Success', description: 'Form submitted successfully!' });
+      } else {
+        toast({ title: 'Error', description: data.error || 'Failed to submit form.' });
+      }
+    } catch (err) {
+      toast({ title: 'Network Error', description: 'Could not connect to server.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+  
 
   const handleJoinWhatsApp = () => {
     // Open WhatsApp group link
